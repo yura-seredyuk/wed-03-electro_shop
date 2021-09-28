@@ -1,0 +1,11 @@
+CLASSWORK: https://github.com/yura-seredyuk/wed-03-electro_shop
+
+Завдання:
+    зробити шаблони сторінок:
+        store
+        checkout
+        product
+    додати методи для відображення даних сторінок у vievs.py 
+    додати обробники в urls.py
+    налаштувати навігацію сторінками (додати до головного navigate блока)
+    + налаштувати гіперпосилання на тел, адрес, е-mail (header, footer)
