@@ -40,7 +40,7 @@ class Product(models.Model):
     description = models.TextField()
     details = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    old_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
+    old_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
     rait = models.PositiveIntegerField(default=0)
