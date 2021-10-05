@@ -1,5 +1,6 @@
 {% extends '../base.html' %}
 {% load static %}
+{% block title %} - Store{% endblock %}
 {% block content %}
 		{% include '../layouts/breadcrumbs.html' %}
 		<!-- SECTION -->
@@ -251,7 +252,12 @@
 										</div>
 									</div>
 									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+										<form action="{% url 'cart:cart_add' product_id=product.id %}" method="POST">
+											{{ cart_product_form }}
+											{% csrf_token %}
+											<input type="submit" class="add-to-cart-btn btn"><i class="fa fa-shopping-cart"></i> add to cart</input>
+
+										</form>
 									</div>
 								</div>
 							</div>
