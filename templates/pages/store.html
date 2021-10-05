@@ -234,11 +234,15 @@
 										<h3 class="product-name"><a href="#">{{ product.name }}</a></h3>
 										<h4 class="product-price">{{ product.price }}{% if product.old_price %} <del class="product-old-price">{{ product.old_price }}</del>{% endif %}</h4>
 										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+											{% with ''|center:5 as range %}
+											{% for _ in range %}
+												{% if forloop.counter <= product.rait %}
+												<i class="fa fa-star"></i>
+												{% else %}
+												<i class="fa fa-star-o"></i>
+												{% endif %}
+											{% endfor %}
+											{% endwith %}
 										</div>
 										<div class="product-btns">
 											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
